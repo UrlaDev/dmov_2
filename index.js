@@ -7,7 +7,7 @@ var port = process.env.PORT || 3800; //     ¿variable de entorno?averiguar
 
 //conexión a la base de datos
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/dmob', {useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/Dmob', {useNewUrlParser: true })
                  .then(()=> {
                      console.log('La conexión a la base de datos Dmob se ha realizado correctamente');
                      //crear servidor

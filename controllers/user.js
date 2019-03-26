@@ -121,10 +121,13 @@ function uploadImage(req,res){
          console.log(file_path);
          var file_split = file_path.split('/');
          var file_name = file_split[2];
-
+         var ext_split = file_name.split('\.');
+        //  var file_ext = ext_split[1];
         var file_ext = path.extname(file_path); //usamos extname de la librería path de Nodejs
      
-   
+        //  if(userId != req.user.sub){
+        //         removeFilesOfUploads(res,file_path, 'usuario incorrecto');
+        //            } 
          if(file_ext == '.png' || file_ext == '.jpg' || file_ext == '.jpeg' || file_ext == '.gif'){
          //actualizar documento de usuario logueado
           User.findByIdAndUpdate(userId, {image: file_name}, {new:true}, (err,userUpdated) => {
