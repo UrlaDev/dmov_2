@@ -8,7 +8,8 @@ var ShowSchema = Schema({
     place: String,
     direccion: String,
     image: String,
-    confirmed: [String]
+    confirmed: [String],
+    note:[]
 });
 
 module.exports = mongoose.model('Show', ShowSchema);

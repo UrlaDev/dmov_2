@@ -9,7 +9,9 @@ var EnsayoSchema = Schema({
     place: String,
     direccion: String,
     img: [],
-    audio:[]
+    audio:[],
+    confirmed:[],
+    note:[]
 
 });
 module.exports = mongoose.model('Ensayo', EnsayoSchema);

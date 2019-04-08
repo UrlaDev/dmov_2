@@ -54,7 +54,7 @@ function saveShow(req,res){
 };
 
 function getShows(req,res){
-    Show.find().sort('-date').exec((err,ShowsTodos) => { 
+    Show.find().sort('date').exec((err,ShowsTodos) => { 
         if(err) res.status(404).send({message:'Error al traer los shows'})
         return res.status(200).send({ShowsTodos});
     });

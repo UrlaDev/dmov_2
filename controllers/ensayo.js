@@ -39,15 +39,12 @@ function saveEnsayo(req,res){
 // TODOS LOS ENSAYOS
  function getEnsayos(req,res){
 
-     Ensayo.find().sort('-date').exec((err,EnsayosTodos)=>{
-        if(err) res,status(404).send({message:'Problema al traer archivos'})
+     Ensayo.find().sort('date').exec((err,EnsayosTodos)=>{
+        if(err) res.status(404).send({message:'Problema al traer archivos'})
         return res.status(200).send({EnsayosTodos});
      });
          
-        // //     try{
-//         var EnsayosTodos = await Ensayo.find().sort({date: -1});
-//         return res.status(200).send({EnsayosTodos});
-// }catch(err){ return handleError(err);};
+ 
 };
 //UN SOLO ENSAYO
 async function getEnsayo(req,res){

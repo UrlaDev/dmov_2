@@ -30,13 +30,16 @@ app.use((req, res, next) => {
 
 
 //rutas // el . use ejecuta la acción antes de llegar al controlador
-app.use('/', express.static('client', {redirect:false}));
+
+ app.use('/', express.static('client', {redirect:false}));
 app.use('/api', user_routes);
 app.use('/api', show_routes);
 app.use('/api', ensayo_routes);
 app.use('/api', contacto_routes);
-app.get('*', function(req,res,next){
+app.get('*',function(req,res,next){
     res.sendFile(path.resolve('client/index.html'));
+
 })
+
 //exportar
 module.exports = app;
